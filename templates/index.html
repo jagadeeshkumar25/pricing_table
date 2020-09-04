@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+      <table align="center" border="2">
+          <tr>
+              <th>ID</th>
+              <th>plan name</th>
+              <th>plan formula</th>
+              <th>location</th>
+              <th>plan status</th>
+              <th>created date</th>
+              <th>updated date</th>
+              <th>action</th>
+          </tr>
+          {% for data in PrincingTables%}
+              <tr>
+                  <th>{{ data.ID }}</th>
+                  <th>{{ data.Plan_Name }}</th>
+                  <th>{{ data.Plan_Formula }}</th>
+                  <th>{{ data.Location }}</th>
+                  <th>{{ data.Plan_Status }}</th>
+                  <th>{{ data.Created_Date }}</th>
+                  <th>{{ data.Updated_Date}}</th>
+              <th>
+                  <a href='#'> <img src="{% static 'images/update.png' %}" width="30px;" height="30px;" style="background: yellow"><br>
+                   <img src="{% static 'images/delete.png' %}" width="30px;" height="30px;" style="background: red"></a>
+              </th>
+              </tr>
+          {% endfor %}
+      </table>
+</body>
+</html>
